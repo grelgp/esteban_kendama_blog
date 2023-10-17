@@ -32,7 +32,7 @@ export default function Home() {
       <div className='mx-8 place-content-center grid columns-1 sm:grid-cols-auto-fit'>
         {names.map((name, index) => {
           return (
-            <Card title={name} videoSrc={"/videos/" + fs.readdirSync("./public/videos").at(index)}></Card>
+            <Card key={name} title={name} videoSrc={"/videos/" + fs.readdirSync("./public/videos").at(index)}></Card>
           )
         })}
       </div>
