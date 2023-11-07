@@ -1,6 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a Next.JS project. It hosts a small video collection for the youtube channel @EstebanKendama.
 
-## Getting Started
+I am self-hosting the project on my server at : http://esteban.grelgp.com/ 
+
+
+## Host on your machine
 
 First, run the development server:
 
@@ -19,6 +22,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+Make sure you have videos in a folder named videos inside the public folder (ex: /public/videos/*.mp4).
 
 ## Learn More
 
