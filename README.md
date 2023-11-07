@@ -1,3 +1,5 @@
+## Description
+
 This is a Next.JS project. It hosts a small video collection for the youtube channel @EstebanKendama.
 
 I am self-hosting the project on my server at : http://esteban.grelgp.com/ 
