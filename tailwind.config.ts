@@ -15,6 +15,15 @@ const config: Config = {
       },
       gridTemplateColumns: {
         'auto-fit': 'repeat(auto-fit, 19rem)'
+      },
+      animation: {
+        'small-bounce': 'smallBounce 0.2s ease-out'
+      },
+      keyframes: {
+        smallBounce: {
+          '100%': { transform: 'none' },
+          '50%': { transform: 'translateY(-1%)' },
+        }
       }
     },
   },
