@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ChangeEvent, useState } from "react";
 
 export default function FileUploader() {
-  const [imageUrl, setImageUrl] = useState("/placeholder-image.png");
+  const [videoUrl, setVideoUrl] = useState("/videos/airplane.mp4");
 
   const onImageFileChange = async (e: ChangeEvent<HTMLInputElement>) => {
     const fileInput = e.target;
@@ -37,7 +37,7 @@ export default function FileUploader() {
 
       const data: { fileUrl: string } = await res.json();
 
-      setImageUrl(data.fileUrl);
+      setVideoUrl(data.fileUrl);
     } catch (error) {
       console.error("something went wrong, check your console.");
     }
@@ -48,22 +48,29 @@ export default function FileUploader() {
   };
 
   return (
-    <label
-      className=""
-      style={{ paddingTop: `calc(100% * (${446} / ${720}))` }}
+    <div
+      className="flex-col justify-center h-96 space-y-4 text-center w-full"
     >
-      <Image
-        src={imageUrl}
-        alt="uploaded image"
-        width={720}
-        height={446}
-        priority={true}
-      />
-      <input
-        style={{ display: "none" }}
-        type="file"
-        onChange={onImageFileChange}
-      />
-    </label>
+      <video className="h-full w-full">
+        <source src={videoUrl} />
+      </video>
+      
+
+      <form action="/api/upload" method="post" className="space-y-4" encType="multipart/form-data">
+        <input
+          className=""
+          type="file"
+          name="video"
+          //onChange={onImageFileChange}
+        />
+        <div className="">
+          <label>Nom : </label>
+          <input className="border-1 shadow-sm rounded-2xl" type="text" name="name" id="name" required />
+        </div>
+        <div className="">
+          <input className="border-2 border-gray-600 rounded-2xl w-36" type="submit" value="Envoyer"/>
+        </div>
+      </form>
+    </div>
   );
 }
