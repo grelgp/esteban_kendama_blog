@@ -54,7 +54,7 @@ export default function FileUploader() {
         </div>
       </form>
       <button className="mt-4 border-2 rounded-2xl w-36 h-8 border-gray-600 hover:bg-gray-300" onClick={onFormSubmit}>Envoyer</button>
-      <p id="error" hidden className="text-red-500 font-semibold mt-2">Erreur lors de l'envoi</p>
+      <p id="error" hidden className="text-red-500 font-semibold mt-2">Erreur lors de l&apos;envoi</p>
     </div>
   );
 }
