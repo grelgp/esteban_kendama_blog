@@ -1,20 +1,24 @@
 import Card from "./card"
-import fs from "fs"
+import sqlite3 from "sqlite3";
+import { open } from 'sqlite'
 
-export default function Home() {
+export default async function Home() {
 
-  let names: string[] = [];
+  let videos: {name: string, path: string}[] = [];
+  
+  const db = await open({
+    filename: './database.db',
+    driver: sqlite3.cached.Database
+  })
 
-  for (let i = 0; i < 11; i++) {
-    names.push("Element " + i);
-  }
+  videos = await db.all('SELECT name, path, difficulty FROM videos')
 
   return (
     <main>
       <div className='mx-8 place-content-center grid columns-1 sm:grid-cols-auto-fit'>
-        {names.map((name, index) => {
+        {videos.map((video, index) => {
           return (
-            <Card key={name} title={name} videoSrc={"/videos/" + fs.readdirSync("./public/videos").at(index)}></Card>
+            <Card key={video.name} title={video.name} videoSrc={"/videos/" + video.path}></Card>
           )
         })}
       </div>
