@@ -4,6 +4,20 @@ This is a Next.JS project. It hosts a small video collection for the youtube cha
 
 I am self-hosting the project on my server at : http://esteban.grelgp.com/ 
 
+### Features
+#### Done
+- Show all videos from an SQLite Database
+- Play video on mouse hover
+- About page and youtube redirect link
+- Admin video uploading form page
+#### Working on
+- More tools for the admin : change order, modify video or name, delete video.
+- Only load videos on the viewport to reduce network traffic
+- Difficulty level for each trick
+#### To do
+- Search bar
+- Sorting options
+
 
 ## Host on your machine
 
